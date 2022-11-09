@@ -12,7 +12,7 @@ int main(){
     
     int *small;
     
-    for(int j = 0; j<4; ++j){       // this loop helps the algorithm start from the second element after the first smallest is found and placed.
+    for(int j = 0; j<4; ++j){       // This loop helps the algorithm start from the second element after the first smallest is found and placed.
        
        small = &s[j];
        for(int i = j + 1; i<5; ++i){        //  This loop searches for the smallest element and takes a record of it.
@@ -20,7 +20,7 @@ int main(){
                small = &s[i];
            }  
        }
-       int m = s[j];            // putting the smallest value at the beginning of the array by swapping
+       int m = s[j];            // Putting the smallest element at the beginning of the array by swapping.
         s[j] = *small;
         *small = m;
     }
