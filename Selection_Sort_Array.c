@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-
 
 int main(){
     
@@ -11,17 +9,18 @@ int main(){
         printf("%d  ", s[k]);
     }
     printf("\n");
+    
     int *small;
-    for(int j = 0; j<4; ++j){
+    
+    for(int j = 0; j<4; ++j){       // this loop helps the algorithm start from the second element after the first smallest is found and placed.
        
        small = &s[j];
-       for(int i = j + 1; i<5; ++i){
+       for(int i = j + 1; i<5; ++i){        //  This loop searches for the smallest element and takes a record of it.
            if( *small > s[i]){
                small = &s[i];
-           }
-           
+           }  
        }
-       int m = s[j];
+       int m = s[j];            // putting the smallest value at the beginning of the array by swapping
         s[j] = *small;
         *small = m;
     }
