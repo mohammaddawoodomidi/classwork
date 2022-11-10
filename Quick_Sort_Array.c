@@ -7,30 +7,15 @@ void swap(int *array1, int *array2){
 }
 
 
-void quick_sort(int array3[],int l , int h){     // h is the index of pivot
-                                                    // l is the length of our array
+void quick_sort(int array3[],int c , int l){     
     
     
 }
-void partition(int array4[], int b, int h){
+void partition(int array4[], int c, int l){
     
-    int c[], d[];
-    int m = 0;
-    int n = 0;
-    for(int f = 1; f<5; ++f){
-    
-        if(array4[0] > array4[f]){
-            c[m] = array4[f];
-            m = m +1;
-        else{
-            d[n] = array4[f];
-            n = n +1;
-            }
-        }
+
     
 }
-
-
 
 
 int main(){
