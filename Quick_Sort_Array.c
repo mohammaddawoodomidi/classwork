@@ -7,14 +7,29 @@ void swap(int *array1, int *array2){
 }
 
 
-void quick_sort(int array3[],int c , int l){     
+void quick_sort(int array3[],int c , int l){        // c and l determine the pool of numbers to be
+                                                    // sorted from the list
     
+    if ((l-1>0)){     // this condition states that our array must have more than one element.
+        int b = partition(array3, c, l);
+        quick_sort(array3, c, b -1);
+        quick_sort(array3, b + 1, l);
+    }
     
 }
-void partition(int array4[], int c, int l){
-    
+int partition(int array4[], int c, int l){
 
     
+    int p = l;              // let's assume the pivot is the last element of the list
+    int j = 0;
+    for( int i=1; i<l; ++i){
+        if(array4[i] < array4[p]){
+            j = j + 1;
+            swap(&array4[i], &array4[j]);
+        }
+    swap(&array4[j + 1], &array4[p]);
+    }
+    return(j + 1);
 }
 
 
@@ -28,7 +43,7 @@ int main(){
     }
     printf("\n");
 
-    quick_sort(a, 5, 4);                   
+    quick_sort(a, 0, 4);        //               
     
     
     
