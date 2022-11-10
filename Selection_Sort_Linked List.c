@@ -7,7 +7,7 @@ struct node {
 };
 
 int main(){
-    struct node *p5 = malloc(sizeof(struct node));
+    struct node *p5 = malloc(sizeof(struct node));                  // making a linked list manually
     p5->data = 25;
     p5->link = NULL;
     
@@ -41,18 +41,20 @@ int main(){
     printf("\n");
     
     int m;
-    for( int i = 1; i<5; ++i){
-        int small = 200;
+    for( int i = 1; i<5; ++i){          
+        int small = 200;                    // a possible number greater than the elements of the list
+                                            // This code is written only for the elements of this linked list.
+                                            // Of course, for a program taking input from user, the code needs to be modified in certain ways.
         while( head != NULL ){
             
-            if(small > head->data){
+            if(small > head->data){             // this condition is set to find the smallest element
                 small = head->data;
-                change = head;
+                change = head;                  // this saves the address of the smallest element
             }
-            head = head->link;
+            head = head->link;             // this is for traversing
         }
         
-        m = temp->data;
+        m = temp->data;                 // in short, the swap function; swaps the smallest element with the first element of the linked list
         temp->data = small;
         change->data = m;
         temp = temp->link;
