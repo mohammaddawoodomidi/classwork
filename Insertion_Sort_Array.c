@@ -35,5 +35,5 @@ int main() {
        printf("%d  ", a[j]);
    }
    printf("\n");
-    return 0;
+    return 1;
 }
