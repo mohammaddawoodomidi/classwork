@@ -5,24 +5,12 @@ void swap(int *array1, int *array2){
     *array1 = *array2;
     *array2 = k;
 }
-
-
-void quick_sort(int array3[],int c , int l){        // c and l determine the pool of numbers to be
-                                                    // sorted from the list
-    
-    if ((l-1>0)){     // this condition states that our array must have more than one element.
-        int b = partition(array3, c, l);
-        quick_sort(array3, c, b -1);
-        quick_sort(array3, b + 1, l);
-    }
-    
-}
 int partition(int array4[], int c, int l){
 
     
     int p = l;              // let's assume the pivot is the last element of the list
-    int j = 0;
-    for( int i=1; i<l; ++i){
+    int j = c - 1;
+    for( int i=1; i<l; ++i){        
         if(array4[i] < array4[p]){
             j = j + 1;
             swap(&array4[i], &array4[j]);
@@ -30,6 +18,17 @@ int partition(int array4[], int c, int l){
     swap(&array4[j + 1], &array4[p]);
     }
     return(j + 1);
+}
+
+
+void quick_sort(int array3[],int c , int l){        // c and l determine the pool of numbers to be sorted from the list
+    
+    if ((l-1>0)){     // this condition states that our array must have more than one element.
+        int b = partition(array3, c, l);
+        quick_sort(array3, c, b -1);
+        quick_sort(array3, b + 1, l);
+    }
+    
 }
 
 
