@@ -55,17 +55,13 @@ void sortAscending(tree *base){         // soring using insertionsort.
         }
     }
     head = base;
-
-
-
 }
 
-void LeftRotation( int *base){
+void LeftRotation( tree *base, tree *ahead){
 
-
-
-
-
+        base->left = ahead;
+        base->right = ahead->right;
+        ahead->right = NULL;
 }
 
 tree *ConstructAVLtree(int *a, int b){
@@ -82,18 +78,18 @@ tree *ConstructAVLtree(int *a, int b){
     }
 
     sortAscending(root);
-    
+
+    tree *head;
+    head = root->right;
+    swap(root, head);
+    LeftRotation(root, head);
+
+
 
 
 
 
 }
-
-
-
-
-
-
 
 int main(){
 
